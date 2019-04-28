@@ -73,6 +73,18 @@ public class AppDetailActivity extends AppCompatActivity {
         });
 
 
+        act.smsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri smsUri = Uri.parse("smsto:01012345678");
+                Intent intent = new Intent(Intent.ACTION_SENDTO, smsUri);
+                intent.putExtra("sms_body","미리 작성될 메세지");
+                startActivity(intent);
+
+            }
+        });
+
+
         act.dateTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
